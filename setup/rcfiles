@@ -1,0 +1,5 @@
+[lubuntu]
+.vimrc $HOME/.vimrc
+.aliases $HOME/.aliases
+.Xresources $HOME/.Xresources
+.Xdefaults $HOME/.Xdefaults
