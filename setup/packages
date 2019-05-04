@@ -17,4 +17,14 @@ libxkbcommon-x11-dev
 xutils-dev
 libxcb-shape0-dev
 autoconf
+
+# shell stuff
 rxvt-unicode-256color
+
+# python stuff
+python3-pip
+pipenv
+
+# image stuff
+imagemagick
+feh

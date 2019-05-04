@@ -30,7 +30,7 @@ def read_sections(filename):
                 current_section = line[1:-1]
                 if current_section not in setup_sections:
                     setup_sections[current_section] = []
-            elif line[0] == '#':
+            elif line[0] == '#' or len(line) == 0:
                 continue
             elif len(current_section) > 0:
                 setup_sections[current_section].append(line)
