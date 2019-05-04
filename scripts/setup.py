@@ -26,12 +26,13 @@ def read_sections(filename):
         current_section = ''
         for line in fr.readlines():
             line = line.strip()
-            if line[0] == '[' and line[-1] == ']':
+
+            if len(line) == 0 or line[0] == '#':
+                continue
+            elif line[0] == '[' and line[-1] == ']':
                 current_section = line[1:-1]
                 if current_section not in setup_sections:
                     setup_sections[current_section] = []
-            elif line[0] == '#' or len(line) == 0:
-                continue
             elif len(current_section) > 0:
                 setup_sections[current_section].append(line)
 
@@ -70,7 +71,12 @@ for project in github_sections[selected_section]:
 
     args = ['git', 'clone', project_url]
     if len(tokens) > 1:
-        target_dir = os.path.join(code_path, tokens[1])
+        # TODO: VALIDATE THIS
+        expanded_path = os.path.expandvars(tokens[1])
+        if not os.path.isabs(expanded_path):
+            target_dir = os.path.join(code_path, expanded_path)
+        else:
+            target_dir = os.path.expandvars(expanded_path)
         args.append(target_dir)
     else:
         project_name = tokens[0].split('/')[1]

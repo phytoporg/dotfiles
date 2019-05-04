@@ -28,3 +28,6 @@ pipenv
 # image stuff
 imagemagick
 feh
+
+# launcher
+rofi
