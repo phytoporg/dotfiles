@@ -8,4 +8,9 @@ URxvt*font: xft:myfont:medium:size=myfontsize
 URxvt*boldFont: xft:myfont:size=myfontsize 
 URxvt*italicFont: xft:myfont:italic:size=myfontsize 
 URxvt*boldItalicFont: xft:myfont:bold:italic:size=myfontsize 
-URxvt*internalBorder mypadding
+URxvt*internalBorder: mypadding
+URxvt*scrollBar: false
+URxvt*depth: 32
+
+URxvt*transparent: true
+URxvt*shading: 20

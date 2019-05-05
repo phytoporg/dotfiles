@@ -1,8 +1,52 @@
 ! ~/.Xresources
-#define mybg #222222
-#define myfg #cccccc
-#define myfont Inconsolata
-#define myfontsize 7
+#define mybg #00000D
+#define myfg #91e1d1
+#define myfont Terminus:style=Bold
+#define myfontsize 15
 #define mypadding 20
+
+! Colors 0-15.
+*.color0: #00000D
+*color0:  #00000D
+*.color1: #AB345F
+*color1:  #AB345F
+*.color2: #F35D70
+*color2:  #F35D70
+*.color3: #3EBC75
+*color3:  #3EBC75
+*.color4: #F2B670
+*color4:  #F2B670
+*.color5: #215C93
+*color5:  #215C93
+*.color6: #E8678D
+*color6:  #E8678D
+*.color7: #91e1d1
+*color7:  #91e1d1
+*.color8: #659d92
+*color8:  #659d92
+*.color9: #AB345F
+*color9:  #AB345F
+*.color10: #F35D70
+*color10:  #F35D70
+*.color11: #3EBC75
+*color11:  #3EBC75
+*.color12: #F2B670
+*color12:  #F2B670
+*.color13: #215C93
+*color13:  #215C93
+*.color14: #E8678D
+*color14:  #E8678D
+*.color15: #91e1d1
+*color15:  #91e1d1
+
+! Black color that will not be affected by bold highlighting.
+*.color66: #00000D
+*color66:  #00000D
+
+*foreground:        #91e1d1
+*background:        #00000D
+*.foreground:       #91e1d1
+*.background:       #00000D
+
 #include ".xdefs/rofi"
 #include ".xdefs/urxvt"

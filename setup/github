@@ -49,3 +49,7 @@ build
 dliub
 
 VundleVim/Vundle.vim $HOME/.vim/bundle/Vundle.vim
+powerline/fonts
+build
+    ./install.sh
+dliub
