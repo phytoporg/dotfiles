@@ -37,7 +37,7 @@ build
     git submodule update --init --recursive
     mkdir build
     cd build
-    cmake .. -DENABLE_NETWORK=1
+    cmake .. -DENABLE_NETWORK=1 -DENABLE_I3=1
     make -j8
     sudo make install
 dliub
@@ -53,3 +53,6 @@ powerline/fonts
 build
     ./install.sh
 dliub
+
+zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting

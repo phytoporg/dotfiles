@@ -188,7 +188,7 @@ for rcfile in rcfiles_sections[selected_section]:
 # 
 print("Deploying scripts...")
 for script in scripts_sections[selected_section]:
-    tokens = script.split()
+    tokens = script.strip().split()
 
     src = os.path.join(scripts_path, os.path.expandvars(tokens[0]))
     dst = os.path.expandvars(tokens[1])

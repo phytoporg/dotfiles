@@ -14,3 +14,7 @@ URxvt*depth: 32
 
 URxvt*transparent: true
 URxvt*shading: 20
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard

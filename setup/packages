@@ -60,6 +60,7 @@ libxcb-util-dev
 wireless-tools
 libxcb-ewmh-dev
 python-xcbgen
+ttf-unifont
 
 # VM
 #virtualbox
