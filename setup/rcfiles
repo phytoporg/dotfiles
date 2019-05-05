@@ -5,3 +5,5 @@
 .Xdefaults $HOME/.Xdefaults
 .i3config $XDG_CONFIG_HOME/i3/config
 .polybar $XDG_CONFIG_HOME/polybar/config
+.xdefs.rofi $HOME/.xdefs/rofi
+.xdefs.urxvt $HOME/.xdefs/urxvt
