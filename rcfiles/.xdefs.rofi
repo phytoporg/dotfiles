@@ -1,1 +1,6 @@
-! TODO
+rofi.bg: mybg
+rofi.fg: myfg
+rofi.hlfg: mybg
+rofi.hlbg: myfg
+rofi.padding: mypadding
+rofi.font: myfont myfontsize

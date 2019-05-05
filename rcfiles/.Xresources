@@ -1,0 +1,8 @@
+! ~/.Xresources
+#define mybg #222222
+#define myfg #cccccc
+#define myfont Inconsolata
+#define myfontsize 7
+#define mypadding 20
+#include "~/.xres/rofi"
+#include "~/.xres/urxvt"
