@@ -1,33 +1,58 @@
 [lubuntu]
 # For i3-gaps
-libxcb1-dev
-libxcb-keysyms1-dev
-libpango1.0-dev
-libxcb-util0-dev
-libxcb-icccm4-dev
-libyajl-dev
-libstartup-notification0-dev
-libxcb-randr0-dev
 libev-dev
+libpango1.0-dev
+libstartup-notification0-dev
+libxcb1-dev
+libxcb-composite0-dev
 libxcb-cursor-dev
+libxcb-icccm4-dev
+libxcb-keysyms1-dev
+libxcb-randr0-dev
+libxcb-shape0-dev
+libxcb-util0-dev
 libxcb-xinerama0-dev
 libxcb-xkb-dev
+libxcb-xrm-dev
 libxkbcommon-dev
 libxkbcommon-x11-dev
+libyajl-dev
 xutils-dev
-libxcb-shape0-dev
-autoconf
 
 # shell stuff
 rxvt-unicode-256color
+zsh
 
 # python stuff
 python3-pip
 pipenv
+python2.7-dev
 
 # image stuff
-imagemagick
-feh
+imagemagick feh
 
 # launcher
 rofi
+
+# fonts
+fonts-powerline
+x11-utils
+
+# c++
+build-essential
+cmake
+libboost-dev
+libboost-filesystem-dev
+libboost-regex-dev
+libboost-system-dev
+autoconf
+
+# for polybar
+libpulse-dev
+libcairo2-dev
+xcb-proto
+libxcb-image0-dev
+libxcb-util-dev
+wireless-tools
+libxcb-ewmh-dev
+python-xcbgen

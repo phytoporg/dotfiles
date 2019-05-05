@@ -3,3 +3,4 @@
 .aliases $HOME/.aliases
 .Xresources $HOME/.Xresources
 .Xdefaults $HOME/.Xdefaults
+.i3config $HOME/.config/i3/config

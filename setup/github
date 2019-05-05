@@ -1,6 +1,51 @@
+#
+# Format for this is:
+# [github project (account/project)] [optional path to clone to]
+#
+# If relative, the optional path is appended to $HOME/code, otherwise
+# an absolute path is directly honored.
+#
+# Build commands for projects can be specified in blocks delineated by
+# build/dliub. All commands are executed in the directory that the most 
+# recently cloned project resides in.
+#
+
 [lubuntu]
 Airblader/xcb-util-xrm
+build
+    git submodule update --init
+    ./autogen.sh --prefix=/usr
+    make
+    sudo make install
+dliub
+
 Airblader/i3 i3-gaps
+build
+    autoreconf --force --install
+    rm -rf build
+    mkdir build
+    cd build
+    ../configure --prefix=/usr --sysconfdir=/etc
+    make
+    sudo make install
+dliub
+
 dylanaraps/pywal
+
 jaagr/polybar
-VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+build
+    git submodule update --init --recursive
+    mkdir build
+    cd build
+    cmake ..
+    make -j8
+    sudo make install
+dliub
+
+stark/siji
+build
+    ./install.sh
+    fc-cache -vf ~/.fonts/
+dliub
+
+VundleVim/Vundle.vim $HOME/.vim/bundle/Vundle.vim

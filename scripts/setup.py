@@ -38,9 +38,50 @@ def read_sections(filename):
 
     return setup_sections
 
+def read_sections_with_build(filename):
+    with open(filename, 'r') as fr:
+        setup_sections = {}
+        build_instructions = {}
+
+        current_section = ''
+        last_project = ''
+
+        in_build = False
+        for line in fr.readlines():
+            line = line.strip()
+
+            if len(line) == 0 or line[0] == '#':
+                continue
+            elif line[0] == '[' and line[-1] == ']':
+                current_section = line[1:-1]
+                if current_section not in setup_sections:
+                    setup_sections[current_section] = []
+            elif line == 'build' and len(last_project) > 0:
+                in_build = True
+
+                if current_section not in build_instructions:
+                    build_instructions[current_section] = {}
+
+                if last_project not in build_instructions[current_section]:
+                    build_instructions[current_section][last_project] = []
+
+            elif line == 'dliub':
+                if not in_build:
+                    continue
+
+                in_build = False
+            elif len(current_section) > 0 and not in_build and not line in ['build', 'dliub']:
+                setup_sections[current_section].append(line)
+                last_project = line
+            elif len(current_section) > 0 and len(last_project) > 0 and in_build and not line == 'dliub':
+                build_instructions[current_section][last_project].append(line)
+
+
+    return setup_sections, build_instructions
+
 packages_sections = read_sections(setup_packages_path)
-github_sections = read_sections(setup_github_path)
 rcfiles_sections = read_sections(setup_rcfiles_path)
+github_sections, build_instructions = read_sections_with_build(setup_github_path)
 
 valid_sections = [k for k in packages_sections.keys() \
                         if k in github_sections and   \
@@ -71,7 +112,6 @@ for project in github_sections[selected_section]:
 
     args = ['git', 'clone', project_url]
     if len(tokens) > 1:
-        # TODO: VALIDATE THIS
         expanded_path = os.path.expandvars(tokens[1])
         if not os.path.isabs(expanded_path):
             target_dir = os.path.join(code_path, expanded_path)
@@ -89,6 +129,24 @@ for project in github_sections[selected_section]:
         proc = subprocess.Popen(args)
         proc.wait()
 
+    #
+    # Execute build instructions if they exist
+    #
+    if selected_section in build_instructions and \
+            project in build_instructions[selected_section]:
+
+        os.chdir(target_dir)
+        for to_execute in build_instructions[selected_section][project]:
+            tokens = to_execute.split()
+            if tokens[0] == 'cd':
+                os.chdir(' '.join(tokens[1:]))
+            else:
+                proc = subprocess.Popen(tokens)
+                proc.wait()
+
+    # TODO: restore chdir state?
+
+
 #
 # Deploy dotfiles
 # 
@@ -98,6 +156,10 @@ for rcfile in rcfiles_sections[selected_section]:
 
     src = os.path.join(rcfiles_path, os.path.expandvars(tokens[0]))
     dst = os.path.expandvars(tokens[1])
+
+    dst_dir = os.path.dirname(dst)
+    if not os.path.exists(dst_dir):
+        os.makedirs(dst_dir)
 
     if os.path.exists(dst):
         os.remove(dst)
