@@ -1,5 +1,7 @@
 [lubuntu]
 # For i3-gaps
+i3bar
+i3status
 libev-dev
 libpango1.0-dev
 libstartup-notification0-dev

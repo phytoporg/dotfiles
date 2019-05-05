@@ -4,5 +4,5 @@
 #define myfont Inconsolata
 #define myfontsize 7
 #define mypadding 20
-#include "~/.xres/rofi"
-#include "~/.xres/urxvt"
+#include ".xdefs/rofi"
+#include ".xdefs/urxvt"

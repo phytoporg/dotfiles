@@ -168,7 +168,7 @@ for project in github_sections[selected_section]:
 # 
 print("Deploying dotfiles...")
 for rcfile in rcfiles_sections[selected_section]:
-    tokens = rcfile.split()
+    tokens = [t.strip() for t in rcfile.split()]
 
     src = os.path.join(rcfiles_path, os.path.expandvars(tokens[0]))
     dst = os.path.expandvars(tokens[1])

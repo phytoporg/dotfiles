@@ -1,4 +1,3 @@
-! ~/.xres/urxvt
 URxvt*background: mybg
 URxvt*foreground: myfg
 URxvt*highlightColor: myfg
