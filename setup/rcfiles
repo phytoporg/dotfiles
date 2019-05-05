@@ -3,4 +3,5 @@
 .aliases $HOME/.aliases
 .Xresources $HOME/.Xresources
 .Xdefaults $HOME/.Xdefaults
-.i3config $HOME/.config/i3/config
+.i3config $XDG_CONFIG_HOME/i3/config
+.polybar $XDG_CONFIG_HOME/polybar/config

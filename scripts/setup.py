@@ -12,10 +12,12 @@ code_path = os.path.join(home_path, 'code')
 dotfiles_path = os.path.join(code_path, 'dotfiles')
 setup_path = os.path.join(dotfiles_path, 'setup')
 rcfiles_path = os.path.join(dotfiles_path, 'rcfiles')
+scripts_path = os.path.join(dotfiles_path, 'scripts')
 
 setup_packages_path = os.path.join(setup_path, 'packages')
 setup_github_path = os.path.join(setup_path, 'github')
 setup_rcfiles_path = os.path.join(setup_path, 'rcfiles')
+setup_scripts_path = os.path.join(setup_path, 'scripts')
 
 #
 # Read sections from the setup packages and github packages paths
@@ -81,6 +83,7 @@ def read_sections_with_build(filename):
 
 packages_sections = read_sections(setup_packages_path)
 rcfiles_sections = read_sections(setup_rcfiles_path)
+scripts_sections = read_sections(setup_scripts_path)
 github_sections, build_instructions = read_sections_with_build(setup_github_path)
 
 valid_sections = [k for k in packages_sections.keys() \
@@ -155,6 +158,26 @@ for rcfile in rcfiles_sections[selected_section]:
     tokens = rcfile.split()
 
     src = os.path.join(rcfiles_path, os.path.expandvars(tokens[0]))
+    dst = os.path.expandvars(tokens[1])
+
+    dst_dir = os.path.dirname(dst)
+    if not os.path.exists(dst_dir):
+        os.makedirs(dst_dir)
+
+    if os.path.exists(dst):
+        os.remove(dst)
+
+    os.symlink(src, dst)
+    print("Linked {} to {}".format(src, dst))
+
+#
+# Deploy scripts
+# 
+print("Deploying scripts...")
+for script in scripts_sections[selected_section]:
+    tokens = script.split()
+
+    src = os.path.join(scripts_path, os.path.expandvars(tokens[0]))
     dst = os.path.expandvars(tokens[1])
 
     dst_dir = os.path.dirname(dst)
