@@ -19,6 +19,7 @@ setup_pipfile_path = os.path.join(setup_path, 'pip')
 setup_github_path = os.path.join(setup_path, 'github')
 setup_rcfiles_path = os.path.join(setup_path, 'rcfiles')
 setup_scripts_path = os.path.join(setup_path, 'scripts')
+setup_commands_path = os.path.join(setup_path, 'setup_commands')
 
 #
 # Read sections from the setup packages and github packages paths
@@ -87,6 +88,7 @@ pip_sections = read_sections(setup_pipfile_path)
 rcfiles_sections = read_sections(setup_rcfiles_path)
 scripts_sections = read_sections(setup_scripts_path)
 github_sections, build_instructions = read_sections_with_build(setup_github_path)
+commands_sections = read_sections(setup_commands_path)
 
 valid_sections = [k for k in packages_sections.keys() \
                         if k in github_sections and   \
@@ -206,4 +208,18 @@ for script in scripts_sections[selected_section]:
 
     proc = subprocess.Popen(['chmod', '+x', dst])
     proc.wait()
+
+#
+# Run commands
+#
+print("Running commands...")
+for command in commands_sections[selected_section]:
+    command = os.path.expandvars(command)
+
+    tokens = command.split()
+    if tokens[0] == 'cd':
+        os.chdir(' '.join(tokens[1:]))
+    else:
+        proc = subprocess.Popen(command, shell=True)
+        proc.wait()
 

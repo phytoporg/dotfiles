@@ -7,6 +7,8 @@ set sw=4
 set et
 %retab!
 
+set hlsearch
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
