@@ -15,6 +15,7 @@ rcfiles_path = os.path.join(dotfiles_path, 'rcfiles')
 scripts_path = os.path.join(dotfiles_path, 'scripts')
 
 setup_packages_path = os.path.join(setup_path, 'packages')
+setup_pipfile_path = os.path.join(setup_path, 'pip')
 setup_github_path = os.path.join(setup_path, 'github')
 setup_rcfiles_path = os.path.join(setup_path, 'rcfiles')
 setup_scripts_path = os.path.join(setup_path, 'scripts')
@@ -82,6 +83,7 @@ def read_sections_with_build(filename):
     return setup_sections, build_instructions
 
 packages_sections = read_sections(setup_packages_path)
+pip_sections = read_sections(setup_pipfile_path)
 rcfiles_sections = read_sections(setup_rcfiles_path)
 scripts_sections = read_sections(setup_scripts_path)
 github_sections, build_instructions = read_sections_with_build(setup_github_path)
@@ -103,6 +105,15 @@ selected_section = sys.argv[1]
 print("Installing packages...")
 for package in packages_sections[selected_section]:
     proc = subprocess.Popen(['sudo', 'apt', 'install', package])    
+    proc.wait()
+
+#
+# Install pip packages
+#
+
+print("Installing pip packages...")
+for pip_package in pip_sections[selected_section]:
+    proc = subprocess.Popen(['pip3', 'install', pip_package])    
     proc.wait()
 
 #
@@ -165,7 +176,7 @@ for rcfile in rcfiles_sections[selected_section]:
         os.makedirs(dst_dir)
 
     if os.path.exists(dst):
-        os.remove(dst)
+        os.unlink(dst)
 
     os.symlink(src, dst)
     print("Linked {} to {}".format(src, dst))
@@ -185,7 +196,14 @@ for script in scripts_sections[selected_section]:
         os.makedirs(dst_dir)
 
     if os.path.exists(dst):
-        os.remove(dst)
+        os.unlink(dst)
 
-    os.symlink(src, dst)
-    print("Linked {} to {}".format(src, dst))
+    try:
+        os.symlink(src, dst)
+        print("Linked {} to {}".format(src, dst))
+    except FileExistsError as e:
+        print(e)
+
+    proc = subprocess.Popen(['chmod', '+x', dst])
+    proc.wait()
+

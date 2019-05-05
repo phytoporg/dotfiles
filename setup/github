@@ -37,7 +37,7 @@ build
     git submodule update --init --recursive
     mkdir build
     cd build
-    cmake ..
+    cmake .. -DENABLE_NETWORK=1
     make -j8
     sudo make install
 dliub
