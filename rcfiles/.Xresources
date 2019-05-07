@@ -1,7 +1,7 @@
 ! ~/.Xresources
 #define mybg #00000D
 #define myfg #91e1d1
-#define myfont Terminess\ Powerline:style=Bold
+#define myfont Terminess\ Powerline
 #define myfontsize 15
 #define mypadding 20
 

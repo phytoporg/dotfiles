@@ -4,8 +4,8 @@ URxvt*highlightColor: myfg
 URxvt*highlightTextColor: mybg
 URxvt*cursorColor: myfg
 URxvt*cursorColor2: mybg
-URxvt*font: xft:myfont:medium:size=myfontsize 
-URxvt*boldFont: xft:myfont:size=myfontsize 
+URxvt*font: xft:myfont:medium:size=myfontsize:style=regular
+URxvt*boldFont: xft:myfont:size=myfontsize:style=bold
 URxvt*italicFont: xft:myfont:italic:size=myfontsize 
 URxvt*boldItalicFont: xft:myfont:bold:italic:size=myfontsize 
 URxvt*internalBorder: mypadding

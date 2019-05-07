@@ -56,3 +56,5 @@ dliub
 
 zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
+
+bkendzior/cowfiles $HOME/.cowsay

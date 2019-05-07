@@ -216,3 +216,4 @@ gaps inner 10
 gaps outer 1
 
 exec_always --no-startup-id $HOME/scripts/polylaunch.sh
+exec feh --bg-scale $HOME/images/wallpapers/current.jpg

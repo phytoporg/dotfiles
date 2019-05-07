@@ -26,10 +26,12 @@ rxvt-unicode-256color
 zsh
 
 # python stuff
-python3-pip
+libiw-dev
 pipenv
 python2.7-dev
-libiw-dev
+python-tk
+python3-pip
+python3-tk
 
 # image stuff
 imagemagick feh
@@ -68,3 +70,12 @@ ttf-unifont
 
 # misc
 curl
+cowsay
+figlet
+fortune
+ranger
+
+# postgres
+postgresql
+postgresql-contrib
+libpq-dev
