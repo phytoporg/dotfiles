@@ -203,9 +203,9 @@ set_from_resource $abrd i32m.color5
 set_from_resource $bbrd i32m.color6
 
 # class                 border  bground text    indicator child_border
-client.focused          $brd    $bg     $txt    $fg       $brd
-client.focused_inactive $ac     $bg2    $bg     $fg       $ac
-client.unfocused        $ac     $bg2    $bg     $fg       $ac
+client.focused          $brd    $brd    $bg     $fg       $brd
+client.focused_inactive $ac     $ac     $bg     $fg       $ac
+client.unfocused        $ac     $ac     $bg     $fg       $ac
 client.urgent           $brd    $bg2    $bg     $fg       $brd
 client.placeholder      $brd    $bg2    $txt    $fg       $brd
 
