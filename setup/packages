@@ -28,10 +28,12 @@ zsh
 # python stuff
 libiw-dev
 pipenv
+pylint
 python2.7-dev
 python-tk
 python3-pip
 python3-tk
+pylint3
 
 # image stuff
 imagemagick feh
@@ -69,11 +71,20 @@ ttf-unifont
 #linux-headers-generic
 
 # misc
-curl
+containerd.io
 cowsay
+curl
+docker-ce
+docker-ce-cli
+ffmpeg
 figlet
 fortune
+jq
 ranger
+
+# For notify-send. Consider Dunst instead.
+libnotify-bin
+notify-osd
 
 # postgres
 postgresql

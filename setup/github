@@ -54,6 +54,12 @@ build
     ./install.sh
 dliub
 
+dunst-project/dunst
+build
+    make
+    sudo make install
+dliub
+
 zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
 

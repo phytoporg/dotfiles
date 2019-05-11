@@ -44,3 +44,6 @@ filetype plugin indent on    " required
 color wal
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
+
+" Disable by default, but keep this here in case it's occasionally useful
+set colorcolumn=80
