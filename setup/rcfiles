@@ -7,3 +7,4 @@
 .polybar $XDG_CONFIG_HOME/polybar/config
 .xdefs.rofi $HOME/.xdefs/rofi
 .xdefs.urxvt $HOME/.xdefs/urxvt
+.dunstrc $HOME/.dunstrc

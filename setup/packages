@@ -82,6 +82,13 @@ fortune
 jq
 ranger
 
+# dunst
+libdbus-1-dev
+libxinerama-dev
+libxrandr-dev
+libxss-dev
+libgdk-pixbuf2.0-dev
+
 # For notify-send. Consider Dunst instead.
 libnotify-bin
 notify-osd
