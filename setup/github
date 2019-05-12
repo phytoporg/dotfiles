@@ -60,6 +60,13 @@ build
     sudo make install
 dliub
 
+zbaylin/rofi-wifi-menu
+build
+    ln -s rofi-wifi-menu.sh $HOME/scripts/rofi-wifi-menu.sh
+    mkdir -p $HOME/.config/rofi
+    ln -s config.example $HOME/.config/rofi/wifi
+dliub
+
 zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
 

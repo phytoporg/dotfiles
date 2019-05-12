@@ -186,15 +186,15 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = %{A:~/scripts/rofi-wifi-menu.sh&:}<ramp-signal> <label-connected>%{A}
 format-connected-underline = ${colors.underline}
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;format-disconnected = %{A:~/scripts/rofi-wifi-menu.sh > ~/log:}disconnected%{A}
+format-disconnected = %{A:~/scripts/rofi-wifi-menu.sh&:}<label-disconnected>%{A}
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
