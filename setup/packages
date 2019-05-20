@@ -55,6 +55,10 @@ libboost-regex-dev
 libboost-system-dev
 autoconf
 
+# c
+cscope
+exuberant-ctags
+
 # for polybar
 libpulse-dev
 libcairo2-dev
