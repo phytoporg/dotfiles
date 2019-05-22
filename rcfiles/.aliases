@@ -1,3 +1,13 @@
 alias python=python3
 alias pip=pip3
 alias cheat='cht.sh $1'
+
+#
+# Navigation
+#
+
+# Personal -------------------------------------------------- 
+alias pddf="pushd $DOTFILES_ROOT"
+
+# Watchers -------------------------------------------------- 
+alias pdsf5="pushd $CODE_PATH_SF5_WATCHER_ROOT"

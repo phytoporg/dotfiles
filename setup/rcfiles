@@ -8,3 +8,4 @@
 .xdefs.rofi $HOME/.xdefs/rofi
 .xdefs.urxvt $HOME/.xdefs/urxvt
 .dunstrc $HOME/.dunstrc
+.env $HOME/.env
