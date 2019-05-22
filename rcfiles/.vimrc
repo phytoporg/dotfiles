@@ -25,6 +25,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'bogado/file-line'
+Plugin 'scrooloose/nerdtree'
+Plugin 'joe-skb7/cscope-maps'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
