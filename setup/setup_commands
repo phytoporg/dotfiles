@@ -1,13 +1,15 @@
 [lubuntu]
 # oh-my-zsh
-mkdir $HOME~/temp
+mkdir -p $HOME/temp
 cd $HOME/temp
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # fonts
-sudo unlink /etc/fonts/conf.d/70-no-bitmaps.conf
+#sudo unlink /etc/fonts/conf.d/70-no-bitmaps.conf
 # rofi-wifi
-ln -s $HOME/code/rofi-wifi-menu/rofi-wifi-menu.sh $HOME/scripts/rofi-wifi-menu.sh
-ln -s $HOME/code/rofi-wifi-menu/config.example $HOME/.config/rofi/wifi
+#mkdir -p $HOME/scripts
+#ln -s $HOME/code/rofi-wifi-menu/rofi-wifi-menu.sh $HOME/scripts/rofi-wifi-menu.sh
+#mkdir -p $HOME/.config/rofi
+#ln -s $HOME/code/rofi-wifi-menu/config.example $HOME/.config/rofi/wifi
 # cheat.sh
 mkdir -p $HOME/bin/
 curl https://cht.sh/:cht.sh > $HOME/bin/cht.sh

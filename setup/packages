@@ -20,6 +20,7 @@ libxkbcommon-dev
 libxkbcommon-x11-dev
 libyajl-dev
 xutils-dev
+x11-xserver-utils
 
 # shell stuff
 rxvt-unicode-256color
@@ -92,6 +93,7 @@ libxinerama-dev
 libxrandr-dev
 libxss-dev
 libgdk-pixbuf2.0-dev
+notify-osd
 
 # For notify-send. Consider Dunst instead.
 libnotify-bin

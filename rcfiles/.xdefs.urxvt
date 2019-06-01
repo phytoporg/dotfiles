@@ -4,10 +4,12 @@ URxvt*highlightColor: myfg
 URxvt*highlightTextColor: mybg
 URxvt*cursorColor: myfg
 URxvt*cursorColor2: mybg
+
 URxvt*font: xft:myfont:medium:size=myfontsize:style=regular
 URxvt*boldFont: xft:myfont:size=myfontsize:style=bold
 URxvt*italicFont: xft:myfont:italic:size=myfontsize 
 URxvt*boldItalicFont: xft:myfont:bold:italic:size=myfontsize 
+
 URxvt*internalBorder: mypadding
 URxvt*scrollBar: false
 URxvt*depth: 32
@@ -18,3 +20,6 @@ URxvt*shading: 20
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
+
+URxvt*cursorBlink: true
+URxvt*reverseVideo: false

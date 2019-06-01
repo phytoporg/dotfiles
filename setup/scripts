@@ -1,3 +1,4 @@
 [lubuntu]
 polylaunch.sh $HOME/scripts/polylaunch.sh
 clipboard $HOME/.urxvt/ext/clipboard
+figlets.sh $HOME/scripts/figlets.sh

@@ -1,3 +1,6 @@
+# MOTD
+echo WELCOME TO MU-TH-UR 6000 | figlet -fsmall | lolcat
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
@@ -78,10 +81,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR=$(which vim)
 # else
+#   # Wtf is mvim?
 #   export EDITOR='mvim'
 # fi
+export EDITOR=$(which vim)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -102,8 +107,6 @@ source ~/.env
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
-
-export EDITOR=/usr/bin/vim
 
 # For colors and such
 (cat ~/.cache/wal/sequences &)

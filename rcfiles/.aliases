@@ -8,6 +8,25 @@ alias cheat='cht.sh $1'
 
 # Personal -------------------------------------------------- 
 alias pddf="pushd $DOTFILES_ROOT"
+alias cddf="cd $DOTFILES_ROOT"
+alias pdhome="pushd $HOME"
+alias cdhome="cd $HOME"
+alias pdcode="pushd $CODE_PATH_ROOT"
+alias cdcode="cd $CODE_PATH_ROOT"
 
 # Watchers -------------------------------------------------- 
 alias pdsf5="pushd $CODE_PATH_SF5_WATCHER_ROOT"
+alias cdsf5="cd $CODE_PATH_SF5_WATCHER_ROOT"
+alias pdwa="pushd $CODE_PATH_WATCHERS_ROOT"
+alias cdwa="cd $CODE_PATH_WATCHERS_ROOT"
+
+# Workflow -------------------------------------------------- 
+alias pdwo="pushd $CODE_PATH_ROOT/metascouter-io/workflow"
+alias cdwo="cd $CODE_PATH_ROOT/metascouter-io/workflow"
+
+# Misc ------------------------------------------------------ 
+alias cls=clear
+alias figlets=$HOME/scripts/figlets.sh
+
+# C+ -------------------------------------------------------- 
+alias c16=cmake -j16
