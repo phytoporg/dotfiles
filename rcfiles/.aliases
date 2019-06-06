@@ -1,6 +1,53 @@
+# 
+# Light control at home!
+#
+
+hueroom() {
+    # Suppress job report while running groupctl in the background
+    setopt LOCAL_OPTIONS NO_NOTIFY NO_MONITOR
+    pushd $HUECTL_ROOT > /dev/null
+    pipenv run python groupctl.py $1 $2 > /dev/null &
+    popd > /dev/null
+}
+
+livingroom() {
+    hueroom "Living room" $1
+}
+
+office() {
+    hueroom "Office" $1
+}
+
+kitchen() {
+    hueroom "Kitchen" $1
+}
+
+hallway() {
+    hueroom "Hallway" $1
+}
+
+bedroom() {
+    hueroom "Bedroom" $1
+}
+
+apartment() {
+    livingroom $1
+    office $1
+    kitchen $1
+    hallway $1
+    bedroom $1
+}
+
 alias python=python3
 alias pip=pip3
 alias cheat='cht.sh $1'
+
+#
+# Editing
+#
+
+alias eenv="$EDITOR $HOME/.env; source $HOME/.env"
+alias ealias="$EDITOR $HOME/.aliases; source $HOME/.aliases"
 
 #
 # Navigation
@@ -21,8 +68,8 @@ alias pdwa="pushd $CODE_PATH_WATCHERS_ROOT"
 alias cdwa="cd $CODE_PATH_WATCHERS_ROOT"
 
 # Workflow -------------------------------------------------- 
-alias pdwo="pushd $CODE_PATH_ROOT/metascouter-io/workflow"
-alias cdwo="cd $CODE_PATH_ROOT/metascouter-io/workflow"
+alias pdwf="pushd $CODE_PATH_WORKFLOW_ROOT"
+alias cdwf="cd $CODE_PATH_WORKFLOW_ROOT"
 
 # Misc ------------------------------------------------------ 
 alias cls=clear

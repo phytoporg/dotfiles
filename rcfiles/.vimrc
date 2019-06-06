@@ -28,6 +28,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'bogado/file-line'
 Plugin 'scrooloose/nerdtree'
 Plugin 'joe-skb7/cscope-maps'
+Plugin 'jreybert/vimagit'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

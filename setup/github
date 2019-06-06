@@ -67,6 +67,13 @@ build
     ln -s config.example $HOME/.config/rofi/wifi
 dliub
 
+xero/figlet-fonts.git
+build
+    sudo cp * /usr/share/figlet
+dliub
+
+phytoporg/huectl.git
+
 zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting $ZSH/custom/plugins/zsh-syntax-highlighting
 

@@ -1,6 +1,3 @@
-# MOTD
-echo WELCOME TO MU-TH-UR 6000 | figlet -fsmall | lolcat
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
@@ -113,3 +110,6 @@ source ~/.aliases
 
 # Enable vim bindings in the shell
 bindkey -v
+
+# MOTD
+echo "$MOTD" | figlet -fANSI\ Shadow | lolcat
