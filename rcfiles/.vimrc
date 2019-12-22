@@ -29,6 +29,15 @@ Plugin 'bogado/file-line'
 Plugin 'scrooloose/nerdtree'
 Plugin 'joe-skb7/cscope-maps'
 
+" fugitive.vim - A Git wrapper so awesome, it should be illegal
+" Fugitive has its own VCS status indicator, but Airline already
+" gives that to you.
+Plugin 'tpope/vim-fugitive'
+" rhubarb gives Github specific features like
+" - <C-x><C-o> completion in fugitive commit messages for issue numbers
+" - Provider for fugitive's Gbrowse command
+Plugin 'tpope/vim-rhubarb'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,3 +59,19 @@ let g:airline_theme='powerlineish'
 
 " Disable by default, but keep this here in case it's occasionally useful
 set colorcolumn=80
+
+let mapleader = ","
+
+" Fugitive binds
+" Basically chords with <leader> to ohmyzsh git binds
+
+noremap <leader>gpl :Gpull<Enter>
+noremap <leader>gph :Gpush<Enter>
+noremap <leader>gph :Gpush<Enter>
+" Opens Git link for selected line or region in browser
+noremap <leader>gb  :Gbrowse<Enter>
+" Adding hunks with :Gstatus - https://vi.stackexchange.com/a/21410
+"  - Press "=" on an file (shows git diff)
+"  - Press "-" on a hunk or visual selection to stage/unstage
+"  - "cvc" to commit verbosely
+noremap <leader>gs  :Gstatus<Enter>
