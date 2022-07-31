@@ -106,7 +106,7 @@ selected_section = sys.argv[1]
 
 print("Installing packages...")
 for package in packages_sections[selected_section]:
-    proc = subprocess.Popen(['sudo', 'apt', 'install', package])    
+    proc = subprocess.Popen(['sudo', 'apt', 'install', package, '-y'])    
     proc.wait()
 
 #
@@ -115,7 +115,7 @@ for package in packages_sections[selected_section]:
 
 print("Installing pip packages...")
 for pip_package in pip_sections[selected_section]:
-    proc = subprocess.Popen(['pip3', 'install', pip_package])    
+    proc = subprocess.Popen(['python3', '-m', 'pip', 'install', pip_package])    
     proc.wait()
 
 #
@@ -157,8 +157,12 @@ for project in github_sections[selected_section]:
             if tokens[0] == 'cd':
                 os.chdir(' '.join(tokens[1:]))
             else:
-                proc = subprocess.Popen(tokens)
-                proc.wait()
+                try:
+                    print(f"DOTFILES[{os.getcwd()}] - {' '.join(tokens)}")
+                    proc = subprocess.Popen(tokens)
+                    proc.wait()
+                except e:
+                    print(e, file=sys.stderr)
 
     # TODO: restore chdir state?
 
@@ -216,6 +220,7 @@ print("Running commands...")
 for command in commands_sections[selected_section]:
     command = os.path.expandvars(command)
 
+    print(f"Running {command}")
     tokens = command.split()
     if tokens[0] == 'cd':
         os.chdir(' '.join(tokens[1:]))
