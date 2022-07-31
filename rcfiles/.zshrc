@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshrc="source ~/.zshrc"
 source ~/.env
 source ~/.aliases
+source ~/.functions
 
 export EDITOR=/usr/bin/vim
 
