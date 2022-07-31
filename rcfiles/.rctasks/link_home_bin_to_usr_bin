@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+
+for i in $HOME/bin/*; do
+    if [[ -x "$i" ]]; then
+        EXEC_NAME=$(basename $i)
+        if [[ ! -x "/usr/bin/$EXEC_NAME" ]]; then
+            echo "Warning: Executable file $EXEC_NAME exists in $HOME/bin and not /usr/bin."
+            while true; do
+                read "CREATE_LINK_YN?Create a link? [y/n]"
+                case $CREATE_LINK_YN in
+                    [Yy]* ) sudo ln -s $i /usr/bin/$EXEC_NAME; break;;
+                    [Nn]* ) echo "Not creating link for $EXEC_NAME"; break;;
+                    * ) echo "Please answer yes or no.";;
+                esac
+            done
+        fi
+    fi
+done
