@@ -94,12 +94,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source ~/.env
 source ~/.aliases
+source ~/.functions
 
-export EDITOR=/usr/bin/vim
+# For some reason, rofi won't pick up executable items in ~/bin, no matter
+# what I do to $PATH.
+source ~/.rctasks/link_home_bin_to_usr_bin
+
+export EDITOR=/usr/bin/nvim
 
 # For colors and such
 (cat ~/.cache/wal/sequences &)
 
 # Enable vim bindings in the shell
 bindkey -v
+
+# Add go to the path
+export PATH=$PATH:/usr/local/go/bin
+
+# For FASD
+eval "$(fasd --init auto)"

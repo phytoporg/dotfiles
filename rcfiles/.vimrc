@@ -1,6 +1,7 @@
 set ai
 syntax on
 set nu!
+set rnu!
 set ts=4
 set sw=4
 set et
@@ -24,10 +25,33 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dylanaraps/wal.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'bogado/file-line'
 Plugin 'scrooloose/nerdtree'
 Plugin 'joe-skb7/cscope-maps'
+Plugin 'junegunn/fzf'
+Plugin 'liuchengxu/vim-clap'
+Plugin 'honza/vim-snippets'
+
+if !has('nvim')
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'SirVer/ultisnips'
+endif
+
+if has('nvim')
+    Plugin 'neovim/nvim-lspconfig'
+    Plugin 'neoclide/coc.nvim'
+endif
+
+" Syntax highlighting
+Plugin 'petrbroz/vim-glsl'
+
+" SNIPPETS
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,5 +72,7 @@ color wal
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
-" Disable by default, but keep this here in case it's occasionally useful
-set colorcolumn=80
+set colorcolumn=100
+
+" For vim-go
+let g:go_bin_path = $GOBIN

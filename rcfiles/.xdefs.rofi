@@ -4,5 +4,5 @@ rofi*fg: myfg
 rofi*hlfg: mybg
 rofi*hlbg: myfg
 rofi*padding: mypadding
-rofi*font: myfont myfontsize
+rofi*font: myrofifont myfontsize
 rofi*lines: 10

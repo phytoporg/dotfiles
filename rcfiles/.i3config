@@ -100,6 +100,9 @@ bindsym Mod4+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod4+minus scratchpad show
 
+# 1pass menu
+bindsym Mod4+equal exec rofi -modi 1pass:rofi-1pass -show 1pass
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -212,7 +215,9 @@ client.placeholder      $brd    $bg2    $txt    $fg       $brd
 client.background       $bg
 
 for_window [class=".*"] border pixel 4
-gaps inner 10
+for_window [title="cli-ui"] floating enable
+for_window [title="axisweeps"] floating enable
+gaps inner 8
 gaps outer 1
 
 exec_always --no-startup-id $HOME/scripts/polylaunch.sh

@@ -5,6 +5,10 @@
 #define myfontsize 15
 #define mypadding 20
 
+! Rofi uses pango, and for whatever reason pango only wants to recognize the
+! .otb version of Terminess. So be it.
+#define myrofifont Terminess\ Powerline\ Medium
+
 ! Colors 0-15.
 *.color0: #00000D
 *color0:  #00000D
