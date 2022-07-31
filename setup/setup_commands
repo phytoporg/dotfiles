@@ -2,7 +2,7 @@
 # oh-my-zsh
 mkdir -p $HOME/temp
 cd $HOME/temp
-[ ! -f ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # fonts
 sudo unlink /etc/fonts/conf.d/70-no-bitmaps.conf
 # rofi-wifi

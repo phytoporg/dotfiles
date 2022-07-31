@@ -1,3 +1,96 @@
+#
+# Serpents
+#
+
 alias python=python3
 alias pip=pip3
+
+#
+# Editing
+#
+
+alias vim=nvim
+alias eenv="$EDITOR $HOME/.env; source $HOME/.env"
+alias ealias="$EDITOR $HOME/.aliases; source $HOME/.aliases"
+alias efunctions="$EDITOR $HOME/.functions; source $HOME/.functions"
+alias resource='source $HOME/.zshrc'
+
+#
+# Git
+#
+alias gpom="git push origin master"
+alias gpo="git push origin $1"
+alias gpum="git pull origin master"
+alias gpu="git pull origin $1"
+
+#
+# Time tracking
+#
+alias tracktime="$HOME/scripts/tracktime.sh &"
+
+#
+# Navigation
+#
+
+alias r=ranger
+
+# Personal -------------------------------------------------- 
+alias pddf="pushd $DOTFILES_ROOT"
+alias cddf="cd $DOTFILES_ROOT"
+alias pdhome="pushd $HOME"
+alias cdhome="cd $HOME"
+alias pdcode="pushd $CODE_PATH_ROOT"
+alias cdcode="cd $CODE_PATH_ROOT"
+
+# Watchers -------------------------------------------------- 
+alias pdsf5="pushd $CODE_PATH_SF5_WATCHER_ROOT"
+alias cdsf5="cd $CODE_PATH_SF5_WATCHER_ROOT"
+alias pdwa="pushd $CODE_PATH_WATCHERS_ROOT"
+alias cdwa="cd $CODE_PATH_WATCHERS_ROOT"
+alias ewatchers="vim -S $HOME/.vim/sessions/watchers.vim"
+
+# Sputter -------------------------------------------------- 
+alias cdsput="cd $SPUTTER_ROOT"
+alias pdsput="pushd $SPUTTER_ROOT"
+
+# Dronehome -------------------------------------------------- 
+alias edronehome="vim -S $HOME/.vim/session/dronehome.vim"
+
+# Workflow -------------------------------------------------- 
+alias pdwf="pushd $CODE_PATH_WORKFLOW_ROOT"
+alias cdwf="cd $CODE_PATH_WORKFLOW_ROOT"
+
+# Misc ------------------------------------------------------ 
+alias cls=clear
+alias figlets=$HOME/scripts/figlets.sh
+alias todo="$EDITOR /tmp/todo"
 alias cheat='cht.sh $1'
+
+# C+ -------------------------------------------------------- 
+alias c8='cmake -j8'
+alias c16='cmake -j16'
+
+# FASD ------------------------------------------------------ 
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+# HEROKU ----------------------------------------------------- 
+alias heroku="snap run heroku $*"
+
+# i3 ---------------------------------------------------------
+alias ei3conf="$EDITOR $I3_CONFIG_FILEPATH"
+alias ei3config="$EDITOR $I3_CONFIG_FILEPATH"
+
+# youtube-dl -------------------------------------------------
+alias youtube-dl=yt-dlp
+
+# DOTFILES --------------------------------------------------- 
+for alias_file in ~/.dotfiles/*alias; do
+    source $alias_file
+done

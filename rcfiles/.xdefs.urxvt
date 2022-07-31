@@ -12,7 +12,7 @@ URxvt*internalBorder: mypadding
 URxvt*scrollBar: false
 URxvt*depth: 32
 
-URxvt*transparent: true
+URxvt*transparent: false
 URxvt*shading: 20
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste

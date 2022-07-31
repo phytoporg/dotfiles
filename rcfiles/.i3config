@@ -212,7 +212,7 @@ client.placeholder      $brd    $bg2    $txt    $fg       $brd
 client.background       $bg
 
 for_window [class=".*"] border pixel 4
-gaps inner 10
+gaps inner 15
 gaps outer 1
 
 exec_always --no-startup-id $HOME/scripts/polylaunch.sh

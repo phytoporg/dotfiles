@@ -1,0 +1,78 @@
+# Personal
+pdrepo() {
+    pushd "$CODE_PATH_ROOT"/$1
+}
+
+_pdrepo() {
+    local state
+
+    _arguments '1: :->code_dir'
+
+    case $state in
+        (code_dir) _arguments '1:repos:($(find $CODE_PATH_ROOT -maxdepth 1 -type d -exec basename {} \;))' ;;
+            (*) compadd "$@" foo bar
+    esac
+}
+
+compdef _pdrepo pdrepo
+
+#
+# Other misc functions
+#
+compbuild() {
+    g++ -O0 -ggdb -std=c++17 -Wshadow -Wall -fsanitize=address -fsanitize=undefined $1.cpp -o $1
+}
+
+# 
+# Light control at home!
+#
+
+hueroom() {
+    # Suppress job report while running groupctl in the background
+    setopt LOCAL_OPTIONS NO_NOTIFY NO_MONITOR
+    pushd $HUECTL_ROOT > /dev/null
+    pipenv run python groupctl.py $1 $2 > /dev/null &
+    popd > /dev/null
+}
+
+livingroom() {
+    hueroom "Living room" $1
+}
+
+office() {
+    hueroom "Office" $1
+}
+
+kitchen() {
+    hueroom "Kitchen" $1
+}
+
+hallway() {
+    hueroom "Hallway" $1
+}
+
+bedroom() {
+    hueroom "Bedroom" $1
+}
+
+apartment() {
+    livingroom $1
+    office $1
+    kitchen $1
+    hallway $1
+    bedroom $1
+}
+
+#
+# Git
+#
+
+gpush() {
+    git_branch_output=$(git branch | grep "*")
+    git push origin ${git_branch_output:2}
+}
+
+gpull() {
+    git_branch_output=$(git branch | grep "*")
+    git pull origin ${git_branch_output:2}
+}
