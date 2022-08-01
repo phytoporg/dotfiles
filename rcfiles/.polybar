@@ -183,7 +183,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlo1
 interval = 3.0
 
 format-connected = %{A:~/scripts/rofi-wifi-menu.sh&:}<ramp-signal> <label-connected>%{A}

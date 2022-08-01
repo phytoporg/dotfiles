@@ -12,6 +12,7 @@ alias pip=pip3
 alias vim=nvim
 alias eenv="$EDITOR $HOME/.env; source $HOME/.env"
 alias ealias="$EDITOR $HOME/.aliases; source $HOME/.aliases"
+alias ezsh="$EDITOR $HOME/.zshrc; source $HOME/.zshrc"
 alias efunctions="$EDITOR $HOME/.functions; source $HOME/.functions"
 alias resource='source $HOME/.zshrc'
 

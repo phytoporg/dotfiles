@@ -99,10 +99,15 @@ source ~/.env
 source ~/.aliases
 source ~/.functions
 
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 
 # For colors and such
 (cat ~/.cache/wal/sequences &)
 
 # Enable vim bindings in the shell
 bindkey -v
+
+# MOTD
+# echo "$MOTD" | figlet -fcybermedium | lolcat
+FIGLET_FONT="$(ls /usr/share/figlet/*.flf | sort -R | head -1)"
+echo "$MOTD" | figlet -f$(basename "${FIGLET_FONT}" .flf) | lolcat

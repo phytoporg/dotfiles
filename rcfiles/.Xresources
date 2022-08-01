@@ -13,16 +13,16 @@
 *.background:       #1a1210
 emacs*foreground:   #f3c29c
 emacs*background:   #1a1210
-URxvt*foreground:   #f3c29c
+!URxvt*foreground:   #f3c29c
 XTerm*foreground:   #f3c29c
 UXTerm*foreground:  #f3c29c
-URxvt*background:   [100]#1a1210
+!URxvt*background:   [100]#1a1210
 XTerm*background:   #1a1210
 UXTerm*background:  #1a1210
-URxvt*cursorColor:  #f3c29c
+!URxvt*cursorColor:  #f3c29c
 XTerm*cursorColor:  #f3c29c
 UXTerm*cursorColor: #f3c29c
-URxvt*borderColor:  [100]#1a1210
+!URxvt*borderColor:  [100]#1a1210
 
 ! Colors 0-15.
 *.color0: #1a1210
@@ -63,4 +63,4 @@ URxvt*borderColor:  [100]#1a1210
 *color66:  #1a1210
 
 !#include ".xdefs/rofi"
-!#include ".xdefs/urxvt"
+#include ".xdefs/urxvt"
