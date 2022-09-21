@@ -1,4 +1,9 @@
 #
+# Snap
+#
+alias discord="snap run discord"
+
+#
 # Serpents
 #
 
@@ -43,13 +48,6 @@ alias cdhome="cd $HOME"
 alias pdcode="pushd $CODE_PATH_ROOT"
 alias cdcode="cd $CODE_PATH_ROOT"
 
-# Watchers -------------------------------------------------- 
-alias pdsf5="pushd $CODE_PATH_SF5_WATCHER_ROOT"
-alias cdsf5="cd $CODE_PATH_SF5_WATCHER_ROOT"
-alias pdwa="pushd $CODE_PATH_WATCHERS_ROOT"
-alias cdwa="cd $CODE_PATH_WATCHERS_ROOT"
-alias ewatchers="vim -S $HOME/.vim/sessions/watchers.vim"
-
 # Sputter -------------------------------------------------- 
 alias cdsput="cd $SPUTTER_ROOT"
 alias pdsput="pushd $SPUTTER_ROOT"
@@ -80,9 +78,6 @@ alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
-
-# HEROKU ----------------------------------------------------- 
-alias heroku="snap run heroku $*"
 
 # i3 ---------------------------------------------------------
 alias ei3conf="$EDITOR $I3_CONFIG_FILEPATH"

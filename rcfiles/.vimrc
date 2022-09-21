@@ -5,6 +5,7 @@ set rnu
 set ts=4
 set sw=4
 set et
+set completeopt-=preview
 %retab!
 
 set hlsearch
@@ -25,10 +26,21 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dylanaraps/wal.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'bogado/file-line'
-Plugin 'scrooloose/nerdtree'
-Plugin 'joe-skb7/cscope-maps'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'fidian/hexmode'
+Plugin 'vimwiki/vimwiki'
+Plugin 'preservim/nerdtree'
+Plugin 'kyazdani42/nvim-tree.lua'
+Plugin 'williamboman/mason.nvim'
+Plugin 'williamboman/mason-lspconfig.nvim'
+Plugin 'neovim/nvim-lspconfig'
+Plugin 'mfussenegger/nvim-dap'
+Plugin 'nvim-treesitter/nvim-treesitter'
+Plugin 'Badhi/nvim-treesitter-cpp-tools'
+Plugin 'ms-jpq/coq_nvim'
 
 " fugitive.vim - A Git wrapper so awesome, it should be illegal
 " Fugitive has its own VCS status indicator, but Airline already
@@ -59,9 +71,22 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
 " Disable by default, but keep this here in case it's occasionally useful
-set colorcolumn=80
+" set colorcolumn=80
 
 let mapleader = ","
+
+" Some general binds
+noremap <C-A-h> :vertical resize +5<CR>
+noremap <C-A-l> :vertical resize -5<CR>
+noremap <C-A-k> :resize -1<CR>
+noremap <C-A-j> :resize +1<CR>
+
+" Clangd binds
+" switch between header and implementation file
+noremap <C-k><C-o> :ClangdSwitchSourceHeader<Enter>
+
+" FZF binds
+noremap <S-p> :FZF<Enter>
 
 " Fugitive binds
 " Basically chords with <leader> to ohmyzsh git binds

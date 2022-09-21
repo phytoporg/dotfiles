@@ -212,6 +212,7 @@ client.placeholder      $brd    $bg2    $txt    $fg       $brd
 client.background       $bg
 
 for_window [class=".*"] border pixel 4
+for_window [class="PADDLEARENA"] floating enable
 gaps inner 15
 gaps outer 1
 

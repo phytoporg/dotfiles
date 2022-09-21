@@ -109,5 +109,7 @@ bindkey -v
 
 # MOTD
 # echo "$MOTD" | figlet -fcybermedium | lolcat
-FIGLET_FONT="$(ls /usr/share/figlet/*.flf | sort -R | head -1)"
-echo "$MOTD" | figlet -f$(basename "${FIGLET_FONT}" .flf) | lolcat
+#FIGLET_FONT=maxiwi
+FIGLET_FONT=miniwi
+#FIGLET_FONT=3d
+echo "$MOTD" | figlet -f"${FIGLET_FONT}" | lolcat
