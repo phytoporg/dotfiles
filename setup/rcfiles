@@ -1,4 +1,7 @@
 [lubuntu]
+init.vim $HOME/.config/nvim/init.vim
+init.lua $HOME/.config/nvim/lua/init.lua
+config.lua $HOME/.config/nvim/lua/config.lua
 .vimrc $HOME/.vimrc
 .aliases $HOME/.aliases
 .Xresources $HOME/.Xresources

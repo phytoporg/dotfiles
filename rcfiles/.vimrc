@@ -41,11 +41,16 @@ Plugin 'mfussenegger/nvim-dap'
 Plugin 'nvim-treesitter/nvim-treesitter'
 Plugin 'Badhi/nvim-treesitter-cpp-tools'
 Plugin 'ms-jpq/coq_nvim'
+Plugin 'ggandor/leap.nvim'
 
 " fugitive.vim - A Git wrapper so awesome, it should be illegal
 " Fugitive has its own VCS status indicator, but Airline already
 " gives that to you.
 Plugin 'tpope/vim-fugitive'
+
+" For a better fugitiv experience
+Plugin 'idanarye/vim-merginal'
+
 " rhubarb gives Github specific features like
 " - <C-x><C-o> completion in fugitive commit messages for issue numbers
 " - Provider for fugitive's Gbrowse command
