@@ -91,7 +91,7 @@ noremap <C-A-j> :resize +1<CR>
 noremap <C-k><C-o> :ClangdSwitchSourceHeader<Enter>
 
 " FZF binds
-noremap <S-p> :FZF<Enter>
+noremap <C-p> :FZF<Enter>
 
 " Fugitive binds
 " Basically chords with <leader> to ohmyzsh git binds
@@ -106,3 +106,6 @@ noremap <leader>gb  :Gbrowse<Enter>
 "  - Press "-" on a hunk or visual selection to stage/unstage
 "  - "cvc" to commit verbosely
 noremap <leader>gs  :Gstatus<Enter>
+
+" Disable line numbers in terminal
+autocmd TermOpen * setlocal nonumber norelativenumber

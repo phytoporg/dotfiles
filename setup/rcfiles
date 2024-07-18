@@ -2,8 +2,12 @@
 init.vim $HOME/.config/nvim/init.vim
 init.lua $HOME/.config/nvim/lua/init.lua
 config.lua $HOME/.config/nvim/lua/config.lua
+pgn_manage_alias $HOME/.dotfiles/pgn_manage_alias
+pgn_manage_env $HOME/.dotfiles/pgn_manage_env
 .vimrc $HOME/.vimrc
 .aliases $HOME/.aliases
+.env $HOME/.env
+.functions $HOME/.functions
 .Xresources $HOME/.Xresources
 .Xdefaults $HOME/.Xdefaults
 .i3config $XDG_CONFIG_HOME/i3/config
