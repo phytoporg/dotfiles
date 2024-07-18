@@ -51,6 +51,7 @@ alias cdcode="cd $CODE_PATH_ROOT"
 # Sputter -------------------------------------------------- 
 alias cdsput="cd $SPUTTER_ROOT"
 alias pdsput="pushd $SPUTTER_ROOT"
+alias sputenv="pushd $SPUTTER_ROOT &> /dev/null; source $SPUTTER_ROOT/scripts/sputrc.sh"
 
 # Dronehome -------------------------------------------------- 
 alias edronehome="vim -S $HOME/.vim/session/dronehome.vim"
